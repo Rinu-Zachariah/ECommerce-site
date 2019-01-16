@@ -32,6 +32,6 @@ resources.factory('GetApi', function ($resource) {
   });
 });
 
-resources.factory('SearchApi', function ($resource, API_ENDPOINT) {
+resources.factory('SearchApi', function ($resource) {
   return $resource('http://interviews-env-1.b8amvayt6w.eu-west-1.elasticbeanstalk.com/products', {}, cachedQuerying());
 });

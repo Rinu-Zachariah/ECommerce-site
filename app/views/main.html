@@ -1,3 +1,26 @@
 <div class="row">
-  
+  <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" id="borderedImage">
+    <div class="overHeadLine"></div>
+    <div class="textRun">RUNNING</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Men</a></li>
+      <li>Shoes</li>
+    </ul>
+  </div>
+</div>
+<div class="row">    
+  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12" ng-repeat="repeatData in dataCommerce">
+    <div class="card">
+      <img src={{repeatData.images.small}} alt="Avatar" style="width:75%">
+      <div class="container">
+        <h5 ><b>{{repeatData.name}}</b></h5> 
+        <p >{{repeatData.price.currency_symbol}}{{repeatData.price.sell}}</p> 
+      </div>
+    </div>
+  </div>
 </div>
