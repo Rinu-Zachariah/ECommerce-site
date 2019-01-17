@@ -1,26 +1,43 @@
 <div class="row">
   <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12" id="borderedImage">
-    <div class="overHeadLine"></div>
-    <div class="textRun">RUNNING</div>
+    <div class="col-md-offset-6 col-md-6 col-lg-offset-6 col-lg-6 marginSet">   
+      <div class="overHeadLine"></div>
+      <div class="textRun">RUNNING</div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+  <div>
     <ul class="breadcrumb">
       <li><a href="#">Home</a></li>
       <li><a href="#">Men</a></li>
       <li>Shoes</li>
-    </ul>
+      <div class="rightArea">
+        <input type="text" placeholder="Search.." ng-model="searchCriteria" ng-change="searchData(searchCriteria)">
+      </div>
+    </ul>    
   </div>
 </div>
-<div class="row">    
-  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12" ng-repeat="repeatData in dataCommerce">
-    <div class="card">
-      <img src={{repeatData.images.small}} alt="Avatar" style="width:75%">
-      <div class="container">
-        <h5 ><b>{{repeatData.name}}</b></h5> 
-        <p >{{repeatData.price.currency_symbol}}{{repeatData.price.sell}}</p> 
+<div class="row col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">    
+  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12" ng-repeat="repeatData in productsList track by $index">
+    <div class="card  text-center">
+      <img src={{repeatData.images.small}} alt="Avatar" style="width:60%">
+      <div class="likeDislike">
+        <div ng-click="likedProduct($index)">
+          <span class="glyphicon" ng-class="repeatData.liked ? 'glyphicon-heart' : 'glyphicon-heart-empty'"></span>
+        </div>
       </div>
+      <div>
+        <h5 class="truncateIfNeeded"><b>{{repeatData.name}}</b></h5> 
+        <p ng-if="(repeatData.price.newValue !== undefined)" class="newValueStyles basicStyle">{{repeatData.price.currency_symbol}}{{repeatData.price.newValue}} </p>
+        <p class="basicStyle" ng-class="{oldStrike: (repeatData.price.newValue !== undefined)}">{{repeatData.price.currency_symbol}}{{repeatData.price.sell}}</p> 
+      </div>
+    </div>
+  </div>
+  <div ng-if="productsList.length === 0">
+    <div style="text-align: center;">
+      <img src="../images/noresult.png" alt="Avatar" style="width:60%">
     </div>
   </div>
 </div>

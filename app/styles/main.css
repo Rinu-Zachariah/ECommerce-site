@@ -16,22 +16,24 @@ body {
     max-height: 500px; }
   body .overHeadLine {
     border: 6px solid yellow;
-    width: 7%;
-    margin: 5% 43% 0% 40%;
-    float: right; }
+    width: 15%;}
   body .textRun {
-    margin: 0% 25%;
-    float: right;
     font-weight: bolder;
     font-size: 6em; }
   body .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s; }
+     }
   body .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    text-overflow: none; }
+   body .card:hover .likeDislike{
+    display: inline-block;
+    float: right;
+    padding-right: 4px; }
   body .container {
-    padding: 2px 16px; }
+    padding: 2px 16px; 
+    overflow: hidden;}
   body ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
@@ -49,5 +51,40 @@ body {
     padding: 8px;
     color: black;
     content: "/\00a0"; }
-
+  body .likeDislike{
+    display: none;
+  }
+  body .likeDislike .glyphicon{
+    color:red;
+    font-size: 18px;}
+  .oldStrike{
+    text-decoration: line-through;
+    font-size: 12px !important;
+    display: inline-block;
+  }
+  .basicStyle{
+    font-size: 18px;
+  }
+  .newValueStyles{
+    color: red;
+    display: inline-block;
+    padding-right : 8px;
+  }
+  .rightArea{
+    float: right;
+    padding-right: 30px;}
+  .marginSet{
+    margin-top: 50px;
+  }
+  .truncateIfNeeded{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body .card:hover .truncateIfNeeded {
+    overflow: visible;
+    white-space: normal;
+    -ms-word-break: break-all;
+    word-break: break-all;
+  }
 /*# sourceMappingURL=style.css.map */
